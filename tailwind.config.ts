@@ -22,6 +22,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          glow: "hsl(var(--primary-glow))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -57,6 +59,11 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Safety Status Colors
+        safe: "hsl(var(--safe))",
+        warning: "hsl(var(--warning))",
+        danger: "hsl(var(--danger))",
+        critical: "hsl(var(--critical))",
       },
       borderRadius: {
         lg: "var(--radius)",
