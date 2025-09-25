@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, Bell, Users, MapPin } from 'lucide-react';
+import { Menu, Bell, Users, MapPin, Hotel, HeartHandshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
@@ -11,6 +11,8 @@ import { AlertFeed } from './AlertFeed';
 import { TouristModal } from './TouristModal';
 import { StatsCards } from './StatsCards';
 import { TouristList } from './TouristList';
+import { HotelRecommendations } from './HotelRecommendations';
+import { TravelAssistance } from './TravelAssistance';
 
 interface DashboardProps {
   user: User;
@@ -161,8 +163,14 @@ export function Dashboard({ user, onLogout }: DashboardProps) {
             </>
           )}
 
+          {/* Hotel Recommendations View */}
+          {activeView === 'hotels' && <HotelRecommendations />}
+
+          {/* Travel Assistance View */}
+          {activeView === 'travel' && <TravelAssistance />}
+
           {/* Other Views */}
-          {activeView !== 'dashboard' && (
+          {!['dashboard', 'hotels', 'travel'].includes(activeView) && (
             <div className="flex items-center justify-center h-full">
               <Card className="bg-card/50 backdrop-blur-sm border-border/30 p-8 text-center">
                 <CardContent>

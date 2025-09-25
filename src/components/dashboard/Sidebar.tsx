@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Shield, Users, AlertTriangle, MapPin, Settings, LogOut, Menu, X, Bell } from 'lucide-react';
+import { Shield, Users, AlertTriangle, MapPin, Settings, LogOut, Menu, X, Bell, Hotel, HeartHandshake } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ViewType, User, Alert } from '@/types';
@@ -41,6 +41,18 @@ export function Sidebar({ user, activeView, setActiveView, onLogout, alerts, isO
       id: 'geofences' as ViewType, 
       name: 'Geofences', 
       icon: MapPin, 
+      badge: null 
+    },
+    { 
+      id: 'hotels' as ViewType, 
+      name: 'Hotels', 
+      icon: Hotel, 
+      badge: null 
+    },
+    { 
+      id: 'travel' as ViewType, 
+      name: 'Travel Assistance', 
+      icon: HeartHandshake, 
       badge: null 
     },
     { 
